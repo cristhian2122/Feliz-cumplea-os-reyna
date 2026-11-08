@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Feliz cumpleaños, Reyna 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Great+Vibes&family=Fredoka:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fondo animado -->
+  <div id="fondo" aria-hidden="true">
+    <div class="estrellas" id="estrellas"></div>
+    <div class="colinas"><i class="c1"></i><i class="c2"></i></div>
+  </div>
+
+  <!-- Capa de corazones y pétalos (los crea script.js) -->
+  <div id="capa" aria-hidden="true"></div>
+
+  <button id="btn-musica" class="oculto" aria-label="Silenciar o activar música">🔊</button>
+
+  <!-- ================= PANTALLA 1: SOBRE ================= -->
+  <section id="pantalla-sobre" class="pantalla activa">
+    <div class="titulo" id="titulo">
+      <h1>
+        <span class="script" data-letras data-base="0s">Feliz</span>
+        <span class="script" data-letras data-base="0.5s">Cumpleaños</span>
+        <span class="nombre" data-letras data-base="1.2s">Reyna</span>
+      </h1>
+      <p class="te-amo">te amo <span class="latido">💗</span></p>
+    </div>
+
+    <p class="fecha">23 de Noviembre</p>
+    <p class="cuenta" id="cuenta"></p>
+
+    <div class="sobre-wrap">
+      <button id="sobre" class="sobre" aria-label="Abrir la carta">
+        <span class="cuerpo"></span>
+        <span class="carta-dentro"><b>Para ti</b> 💌</span>
+        <span class="frente"></span>
+        <span class="solapa"></span>
+        <span class="sello" id="sello">R</span>
+      </button>
+    </div>
+
+    <p class="indicacion">Haz clic en el sello<br>para leer la carta.</p>
+  </section>
+
+  <!-- ================= PANTALLA 2: CARTA ================= -->
+  <section id="pantalla-carta" class="pantalla">
+
+    <div class="colgante">
+      <i class="clip"></i>
+      <div class="cabecera">
+        <small>Una carta para ti</small>
+        <strong data-letras data-base="0.3s">REYNA</strong>
+        <small>Palabras que quiero dedicarte.</small>
+        <span class="corazon-cab">💗</span>
+      </div>
+    </div>
+
+    <article class="papel" id="papel">
+      <span class="etiqueta">Archivo</span>
+      <span class="esq e1">💗</span><span class="esq e2">💖</span>
+      <span class="esq e3">💖</span><span class="esq e4">💗</span>
+
+      <!-- ✏️ EDITA AQUÍ EL TEXTO DE LA CARTA (cada <p> es un párrafo; se escribe solo, letra por letra) -->
+      <p>¡Feliz cumpleaños, mi Reyna!</p>
+      <p>Hoy, en tu cumpleaños, quiero decirte que lo más valioso para mí no es solamente celebrar el día en que llegaste a este mundo, sino celebrar la maravillosa persona que eres.</p>
+      <p>Una mujer de corazón hermoso, con una esencia única y, sobre todo, una excelente madre, que demuestra cada día el amor inmenso que lleva dentro.</p>
+      <p>Eres de esas personas que se encuentran una vez en un millón, de esas que llegan a tu vida y dejan una huella imposible de borrar.</p>
+      <p>Nunca dejes de ser esa mujer tan especial. Mereces toda la felicidad del mundo.</p>
+      <p class="firma">¡Feliz cumpleaños, mi hermosa Reyna! ❤️</p>
+      <small class="saltar" id="saltar">toca la carta para leerla completa</small>
+    </article>
+
+    <!-- 📷 FOTOS: pon tus imágenes en la carpeta "fotos" (foto1.jpg, foto2.jpg, foto3.jpg). Toca una foto y salen corazones -->
+    <div class="fotos">
+      <figure class="polaroid" style="--rot:-6deg"><div class="marco"><i class="cinta"></i><div class="foto-caja"><img src="11.jpeg" alt="Foto 1" onerror="this.remove()"></div><figcaption>Tú y yo 💗</figcaption></div></figure>
+      <figure class="polaroid" style="--rot:5deg"><div class="marco"><i class="cinta"></i><div class="foto-caja"><img src="12.jpeg" alt="Foto 2" onerror="this.remove()"></div><figcaption>Mi favorita 💖</figcaption></div></figure>
+      <figure class="polaroid" style="--rot:-3deg"><div class="marco"><i class="cinta"></i><div class="foto-caja"><img src="13.jpeg" alt="Foto 3" onerror="this.remove()"></div><figcaption>Para siempre 💞</figcaption></div></figure>
+    </div>
+
+    <!-- Corazón interactivo -->
+    <div class="amor-caja">
+      <p class="amor-texto" data-letras data-base="0s">Te amo, Reyna</p>
+      <button id="btn-corazon" class="btn-corazon" aria-label="Enviar corazones">💗</button>
+      <p class="contador">Toca el corazón · <b id="num">0</b> besos enviados</p>
+    </div>
+
+    <p class="pie">Con todo mi cariño, para Reyna 🎂</p>
+  </section>
+
+  <!-- 🎵 MÚSICA: pon tu canción en la carpeta "musica" con el nombre cancion.mp3 -->
+  <audio id="audio" src="mus.mp3" loop preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
